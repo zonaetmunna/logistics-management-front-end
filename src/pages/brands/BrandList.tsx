@@ -1,11 +1,5 @@
 import React, { useState, ChangeEvent } from "react"
 import { toast } from "react-hot-toast"
-import {
-  AiFillDelete,
-  AiFillEye,
-  AiOutlineEdit,
-  AiOutlineSearch,
-} from "react-icons/ai"
 import { FaSearch } from "react-icons/fa"
 import AddBrandModal from "../../components/brand/AddBrandModal"
 import EditBrandModal from "../../components/brand/EditBrandModal"

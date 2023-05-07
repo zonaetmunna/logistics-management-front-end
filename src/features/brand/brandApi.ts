@@ -57,8 +57,8 @@ const brandApi = apiSlice.injectEndpoints({
         }),
         updateBrand: builder.mutation({
             query: (brand) => ({
-                url: `/products/${brand._id}`,
-                method: "DELETE",
+                url: `/brand/${brand._id}`,
+                method: "PUT",
                 body: brand,
             }),
             invalidatesTags: ["brand"],
