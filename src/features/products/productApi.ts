@@ -1,27 +1,45 @@
 import apiSlice from "../api/apiSlice"
 
-// types
-interface ApiResponseData {
-    data: IProduct[]
-    message: string
-    error: boolean
+// Define types
+export interface Product {
+    otherImages: [];
+    imageURLs: [];
+    unit: string;
+    _id: string;
+    name: string;
+    category: string;
+    brand: {
+        id: string;
+        name: "string"
+    };
+    description: string;
+    __v: number;
 }
 
-interface ApiResponseSingle {
-    data: IProduct
-    message: string
-    error: boolean
+interface ProductResponseData {
+    status: string;
+    data: {
+        total: number;
+        totalPage: number | null;
+        products: Product[];
+    };
 }
+
+interface SingleBrandResponse {
+    status: "success";
+    data: Product;
+}
+
 
 const productApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
-        getProducts: builder.query<ApiResponseData, void>({
+        getProducts: builder.query<ProductResponseData, void>({
             query: () => ({
-                url: "/products",
+                url: "/product",
             }),
             providesTags: ["product"],
         }),
-        getSingleProduct: builder.query<ApiResponseSingle, string>({
+        getSingleProduct: builder.query<SingleBrandResponse, string>({
             query: (id) => ({
                 url: `/products/${id}`,
             }),
@@ -29,7 +47,7 @@ const productApi = apiSlice.injectEndpoints({
         }),
         addProduct: builder.mutation({
             query: (data) => ({
-                url: "/products",
+                url: "/product",
                 method: "POST",
                 body: data,
             }),
@@ -37,9 +55,17 @@ const productApi = apiSlice.injectEndpoints({
         }),
         removeProduct: builder.mutation({
             query: (id) => ({
-                url: `/products/${id}`,
+                url: `/product/${id}`,
                 method: "DELETE",
                 body: id,
+            }),
+            invalidatesTags: ["product"],
+        }),
+        updateProduct: builder.mutation({
+            query: (product) => ({
+                url: `/product/${product._id}`,
+                method: "PUT",
+                body: product,
             }),
             invalidatesTags: ["product"],
         }),
@@ -51,4 +77,5 @@ export const {
     useGetSingleProductQuery,
     useAddProductMutation,
     useRemoveProductMutation,
+    useUpdateProductMutation
 } = productApi
