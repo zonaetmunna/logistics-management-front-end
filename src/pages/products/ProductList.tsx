@@ -1,219 +1,322 @@
-import React, { ChangeEvent, useState } from "react"
+import React, { useMemo, useState } from "react"
 import {
-  Product,
-  useAddProductMutation,
   useGetProductsQuery,
   useRemoveProductMutation,
   useUpdateProductMutation,
 } from "../../features/products/productApi"
-import { FaSearch } from "react-icons/fa"
+import {
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
+  FaChevronLeft,
+  FaChevronRight,
+  FaEdit,
+  FaSearch,
+  FaTimesCircle,
+  FaTrash,
+} from "react-icons/fa"
 import Pagination from "../../components/common/Pagination"
 import UpdateProductModal from "../../components/products/UpdateProductModal"
 import DeleteModal from "../../components/common/DeleteModal"
 import DeleteProductModal from "../../components/products/DeleteProductModal"
 import AddProductModal from "../../components/products/AddProductModal"
+import Select from "react-select"
+import { BiBullseye } from "react-icons/bi"
+import { useGetCategoryQuery } from "../../features/category/categoryApi"
+import {
+  CategoryOption,
+  ICategory,
+  IPostProductData,
+  IProduct,
+} from "../../types"
 
 const ProductList = () => {
-  const [currentPage, setCurrentPage] = useState<number>(1)
-  const [pageSize, setPageSize] = useState<number>(10)
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
-  const [isAddProductModalOpe, setIsAddProductModalOpen] =
-    useState<boolean>(false)
-  const [isSingleProductModalOpen, setIsSingleProductModalOpen] =
+  const [selectedCategory, setSelectedCategory] =
+    useState<CategoryOption | null>(null)
+  const [searchText, setSearchText] = useState("")
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage, setItemsPerPage] = useState(10)
+
+  // api data
+  const { data, error, isError, isLoading } = useGetProductsQuery({
+    category: selectedCategory?.value,
+    search: searchText,
+    page: currentPage,
+    limit: itemsPerPage,
+  })
+
+  const products = data?.data.products
+
+  const { data: categoryData } = useGetCategoryQuery({})
+  const categories = categoryData?.data.category
+  console.log(categories)
+
+  const handleCategoryChange = (selected: CategoryOption | null) => {
+    setSelectedCategory(selected)
+    setCurrentPage(1)
+  }
+
+  const categoryOptions = categories?.map((category: ICategory) => ({
+    label: category.name,
+    value: category.name,
+  }))
+
+  // Filter products by selected category
+  const filteredProducts = useMemo(() => {
+    if (products && selectedCategory) {
+      return products.filter(
+        (product: IProduct) => product.category === selectedCategory.value,
+      )
+    } else {
+      return products || []
+    }
+  }, [products, selectedCategory])
+
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const visibleProducts = filteredProducts?.slice(startIndex, endIndex)
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
+
+  const totalPages = Math.ceil(filteredProducts?.length / itemsPerPage)
+
+  /* handle update and delete */
+  const [updateProduct] = useUpdateProductMutation()
+  const [deleteProduct] = useRemoveProductMutation()
+
+  const [slectedProduct, setSelectedProduct] = useState<IProduct | null>(null)
+  const [isSingleBrandModalOpen, setIsSingleBrandModalOpen] =
     useState<boolean>(false)
   const [isUpdateProductModalOpen, setIsUpdateProductModalOpen] =
     useState<boolean>(false)
   const [isDeleteProductModalOpen, setIsDeleteProductModalOpen] =
     useState<boolean>(false)
 
-  // get query
-  const { data, isError, isLoading } = useGetProductsQuery()
-  const products = data?.data?.products
-  const total = data?.data.total ?? 0
-  // post query
-  const [addProduct] = useAddProductMutation()
-  // get single brand
-  //   const { data } = useGetProductsQuery()
-  // delete mutation
-  const [deleteProduct] = useRemoveProductMutation()
-  // update mutation
-  const [updateProduct] = useUpdateProductMutation()
-
-  // input
-  const [displayData, setDisplayData] = useState<Product[]>([])
-
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    const searchText = e.target.value.toLowerCase()
-    const matchedResult = products?.filter((elem) =>
-      elem.name.toLowerCase().includes(searchText),
-    )
-    setDisplayData(matchedResult || [])
+  const handleUpdateProduct = (product: IPostProductData) => {
+    updateProduct(product)
   }
 
-  const handleAddBrand = (brand: ProductData) => {
-    addProduct(brand)
-  }
-
-  const handleUpdateBrand = (brand: ProductData) => {
-    updateProduct(brand)
-  }
-
-  const handleDeleteBrand = (id: string) => {
+  const handleDeleteProduct = (id: string) => {
     deleteProduct(id)
   }
 
-  const handleBrandClick = (product: Product) => {
+  const handleProductClick = (product: IProduct) => {
     setSelectedProduct(product)
-    setIsSingleProductModalOpen(true)
+    setIsSingleBrandModalOpen(true)
   }
 
-  const handleUpdateClick = (product: Product) => {
+  const handleUpdateClick = (product: IProduct) => {
     setSelectedProduct(product)
     setIsUpdateProductModalOpen(true)
   }
 
-  const handleDeleteClick = (product: Product) => {
+  const handleDeleteClick = (product: IProduct) => {
     setSelectedProduct(product)
     setIsDeleteProductModalOpen(true)
   }
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page)
-  }
-
-  const handlePageSizeChange = (size: number) => {
-    setPageSize(size)
-  }
-
   return (
     <div className="container mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Product-List</h1>
-      {/* input and button section */}
-      <div className="flex justify-between items-center my-5">
-        {/* input field */}
-        <div className="relative flex items-center bg-white">
+      <h1 className="text-3xl font-bold mb-4">Product List</h1>
+      <div className="flex items-center space-x-2 mb-4">
+        <div className="relative">
+          <Select
+            options={categoryOptions}
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+            className="w-40"
+          />
+          {selectedCategory && (
+            <button
+              onClick={() => setSelectedCategory(null)}
+              className="absolute right-0 top-0 h-full flex items-center pr-2 text-gray-500 hover:text-gray-700"
+            >
+              <FaTimesCircle className="w-4 h-4" />
+            </button>
+          )}
+        </div>
+        <div className="relative">
           <input
             type="text"
-            placeholder="Search Products"
-            className="py-2 pl-10 pr-4 block w-full rounded-md bg-white text-gray-800 border-gray-300 focus:outline-none  focus:border-gray-500"
-            onChange={(e) => handleSearch(e)}
+            placeholder="Search products..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            className="border border-gray-300 rounded-md py-2 px-3 w-40 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <span className="absolute left-3 top-2">
-            <FaSearch className="text-gray-600 w-5 h-5" />
-          </span>
-        </div>
-        {/* add brand */}
-        <div className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 flex items-center ">
-          <button
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => setIsAddProductModalOpen(true)}
-          >
-            Add Product
-          </button>
+          {searchText && (
+            <button
+              onClick={() => setSearchText("")}
+              className="absolute right-0 top-0 h-full flex items-center pr-2 text-gray-500 hover:text-gray-700"
+            >
+              <FaTimesCircle className="w-4 h-4" />
+            </button>
+          )}
         </div>
       </div>
+      <table className="min-w-full divide-y divide-gray-200 mt-10 p-5">
+        <thead className="bg-gray-50">
+          <tr>
+            <th
+              scope="col"
+              className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+            >
+              Name
+            </th>
+            <th
+              scope="col"
+              className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+            >
+              Description
+            </th>
+            <th
+              scope="col"
+              className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+            >
+              Category
+            </th>
+            <th
+              scope="col"
+              className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+            >
+              Brand
+            </th>
 
-      {/* otherImages: [];
-    imageURLs: [];
-    unit: string;
-    _id: string;
-    name: string;
-    category: string;
-    brand: {
-        id: string;
-        name: "string"
-    };
-    description: string;
-    __v: number; */}
+            <th
+              scope="col"
+              className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+            >
+              <span className="sr-only">Action</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {visibleProducts?.map((product: IProduct) => (
+            <tr key={product._id}>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm font-medium text-gray-900">
+                  {product.name}
+                </div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm text-gray-500">
+                  {product.description.slice(0, 3)}
+                </div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm text-gray-500">{product.category}</div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm text-gray-500">
+                  {product.brand.name}
+                </div>
+              </td>
 
-      {/* table */}
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <>
-          <table className="table-auto w-full">
-            <thead>
-              <tr>
-                <th className="px-4 py-2">Name</th>
-                <th className="px-4 py-2">category</th>
-                <th className="px-4 py-2">brand</th>
-                <th className="px-4 py-2">Location</th>
-                <th className="px-4 py-2">unit</th>
-                <th className="px-4 py-2">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {displayData?.map((product) => (
-                <tr key={product._id}>
-                  <td className="border px-4 py-2">{product.name}</td>
-                  <td className="border px-4 py-2">{product.category}</td>
-                  <td className="border px-4 py-2">
-                    {product.description.slice(0, 5)}
-                  </td>
-                  <td className="border px-4 py-2">{product?.brand.name}</td>
-                  <td className="border px-4 py-2">{product.unit}</td>
-                  <td className="border px-4 py-2">
-                    <button
-                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-                      onClick={() => handleBrandClick(product)}
-                    >
-                      View
-                    </button>
-                    <button
-                      className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2"
-                      onClick={() => handleUpdateClick(product)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                      onClick={() => handleDeleteClick(product)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </>
-      )}
+              <td className="border px-4 py-2">
+                <button
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+                  onClick={() => handleProductClick(product)}
+                >
+                  <BiBullseye />
+                </button>
+                <button
+                  className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-2"
+                  onClick={() => handleUpdateClick(product)}
+                >
+                  <FaEdit />
+                </button>
+                <button
+                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                  onClick={() => handleDeleteClick(product)}
+                >
+                  <FaTrash />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {/* paginition */}
+      <nav className="flex justify-center" aria-label="Pagination">
+        <ul className="inline-flex">
+          <li>
+            <button
+              onClick={() => handlePageChange(1)}
+              disabled={currentPage === 1}
+              className={`${
+                currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+              } py-2 px-4 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50`}
+            >
+              <span className="sr-only">First page</span>
+              <FaAngleDoubleLeft className="h-5 w-5" aria-hidden="true" />
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`${
+                currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+              } ml-3 py-2 px-4 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50`}
+            >
+              <span className="sr-only">Previous page</span>
+              <FaChevronLeft className="h-5 w-5" aria-hidden="true" />
+            </button>
+          </li>
+          <li>
+            <span className="mx-3 py-2 px-4 border border-gray-300 bg-white text-sm font-medium text-gray-700">{`${currentPage} of ${totalPages}`}</span>
+          </li>
+          <li>
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`${
+                currentPage === totalPages
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
+              } mr-3 py-2 px-4 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50`}
+            >
+              <span className="sr-only">Next page</span>
+              <FaChevronRight className="h-5 w-5" aria-hidden="true" />
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => handlePageChange(totalPages)}
+              disabled={currentPage === totalPages}
+              className={`${
+                currentPage === totalPages
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
+              } py-2 px-4 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50`}
+            >
+              <span className="sr-only">Last page</span>
+              <FaAngleDoubleRight className="h-5 w-5" aria-hidden="true" />
+            </button>
+          </li>
+        </ul>
+      </nav>
+      {/* modal */}
 
-      {/* pagination */}
-      <Pagination
-        total={total}
-        currentPage={currentPage}
-        pageSize={pageSize}
-        onPageChange={handlePageChange}
-        onPageSizeChange={handlePageSizeChange}
-      />
-      {/* view modal */}
-      {/* {isSingleProductModalOpen && (
-        <SingleBrandViewModal
-          onClose={() => setIsSingleProductModalOpen(false)}
-          brand={selectedProduct}
+      {/* {isSingleBrandModalOpen && (
+        <ViewProduct
+          onClose={() => setIsSingleBrandModalOpen(false)}
+          brand={selectedBrand}
         />
       )} */}
-      {/* add brand modal */}
-      {isAddProductModalOpe && (
-        <AddProductModal
-          onClose={() => setIsAddProductModalOpen(false)}
-          onAddProduct={handleAddBrand}
-        />
-      )}
-      {/* update and delete modal */}
-      {selectedProduct && isUpdateProductModalOpen && (
+
+      {slectedProduct && isUpdateProductModalOpen && (
         <UpdateProductModal
           onClose={() => setIsUpdateProductModalOpen(false)}
-          onUpdateProduct={handleUpdateBrand}
-          product={selectedProduct}
+          onUpdateProduct={handleUpdateProduct}
+          product={slectedProduct}
         />
       )}
-      {selectedProduct && isDeleteProductModalOpen && (
+      {slectedProduct && isDeleteProductModalOpen && (
         <DeleteProductModal
           onClose={() => setIsDeleteProductModalOpen(false)}
-          onDeleteBrand={handleDeleteBrand}
-          product={selectedProduct}
+          onDeleteProduct={handleDeleteProduct}
+          product={slectedProduct}
         />
       )}
     </div>

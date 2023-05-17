@@ -1,11 +1,10 @@
 import React from "react"
 import { useForm } from "react-hook-form"
-import { Product } from "../../features/products/productApi"
 
 interface EditBrandModalProps {
   onClose: () => void
-  onUpdateProduct: (product: ProductData) => void
-  product: Product
+  onUpdateProduct: (product: IPostProductData) => void
+  product: IProduct
 }
 
 const UpdateProductModal = ({
@@ -17,11 +16,10 @@ const UpdateProductModal = ({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ProductData>({})
+  } = useForm<IPostProductData>({})
 
-  const onSubmit = (data: ProductData) => {
+  const onSubmit = (data: IPostProductData) => {
     onUpdateProduct(data)
-    onClose()
   }
   return (
     <div
@@ -98,13 +96,13 @@ const UpdateProductModal = ({
               >
                 Update
               </button>
-              {/* <button
+              <button
                 type="button"
-                onClick={() => setIsUpdateBrandModalOpen(false)}
+                onClick={() => onClose()}
                 className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
               >
                 Cancel
-              </button> */}
+              </button>
             </div>
           </div>
         </form>

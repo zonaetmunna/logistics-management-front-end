@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 
 interface AddProductModalProps {
   onClose: () => void
-  onAddProduct: (data: ProductData) => void
+  onAddProduct: (data: IPostProductData) => void
 }
 
 const AddProductModal = ({ onClose, onAddProduct }: AddProductModalProps) => {
@@ -11,9 +11,9 @@ const AddProductModal = ({ onClose, onAddProduct }: AddProductModalProps) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ProductData>()
+  } = useForm<IPostProductData>()
 
-  const onSubmit = (data: ProductData) => {
+  const onSubmit = (data: IPostProductData) => {
     onAddProduct(data)
     onClose()
   }

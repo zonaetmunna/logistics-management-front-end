@@ -1,17 +1,16 @@
 import React from "react"
-import { Product } from "../../features/products/productApi"
 interface DeleteModalProps {
   onClose: () => void
-  onDeleteBrand: (productId: string) => void
-  product: Product
+  onDeleteProduct: (productId: string) => void
+  product: IProduct
 }
 const DeleteProductModal = ({
   onClose,
-  onDeleteBrand,
+  onDeleteProduct,
   product,
 }: DeleteModalProps) => {
   const handleDelete = () => {
-    onDeleteBrand(product._id)
+    onDeleteProduct(product._id)
     onClose()
   }
   return (
