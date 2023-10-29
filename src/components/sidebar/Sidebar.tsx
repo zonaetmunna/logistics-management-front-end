@@ -1,12 +1,5 @@
-import React, { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
-import {
-  FiShoppingBag,
-  FiLogOut,
-  FiChevronRight,
-  FiChevronLeft,
-} from "react-icons/fi"
+import { useState } from "react"
+import { BiMessageSquare } from "react-icons/bi"
 import {
   FaChevronDown,
   FaChevronUp,
@@ -16,8 +9,15 @@ import {
   FaPlus,
   FaUser,
 } from "react-icons/fa"
-import { BiMessageSquare } from "react-icons/bi"
-import { MdPeople, MdPerson, MdDashboard } from "react-icons/md"
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiLogOut,
+  FiShoppingBag,
+} from "react-icons/fi"
+import { MdDashboard, MdPeople, MdPerson } from "react-icons/md"
+import { useDispatch } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false)

@@ -1,4 +1,4 @@
-import React from "react"
+import { IProduct } from "../../types"
 interface DeleteModalProps {
   onClose: () => void
   onDeleteProduct: (productId: string) => void

@@ -1,4 +1,3 @@
-import React from "react"
 import { createBrowserRouter } from "react-router-dom"
 import Dashboard from "../layouts/Dashboard"
 import Error from "../layouts/Error"

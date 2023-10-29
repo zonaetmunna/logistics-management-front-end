@@ -1,19 +1,17 @@
-import React, { useState, ChangeEvent } from "react"
-import { toast } from "react-hot-toast"
+import { ChangeEvent, useState } from "react"
 import { FaSearch } from "react-icons/fa"
 import AddBrandModal from "../../components/brand/AddBrandModal"
 import EditBrandModal from "../../components/brand/EditBrandModal"
 import SingleBrandViewModal from "../../components/brand/SingleBrandViewModal"
 import DeleteModal from "../../components/common/DeleteModal"
+import Pagination from "../../components/common/Pagination"
 import {
   Brand,
   useAddBrandMutation,
   useDeleteBrandMutation,
   useGetBrandQuery,
-  useGetSingleBrandQuery,
   useUpdateBrandMutation,
 } from "../../features/brand/brandApi"
-import Pagination from "../../components/common/Pagination"
 
 const BrandList = () => {
   const [currentPage, setCurrentPage] = useState<number>(1)

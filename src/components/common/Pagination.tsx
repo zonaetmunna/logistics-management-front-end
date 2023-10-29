@@ -1,5 +1,5 @@
 import React from "react"
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa"
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 
 interface Props {
   total: number

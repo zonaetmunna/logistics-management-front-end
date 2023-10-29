@@ -1,7 +1,5 @@
-import React from "react"
-
 const Table = ({ children, header, totalPage, page, setPage }) => {
-    const pages = Array.from({ length: totalPage }, (_, i) => i + 1)
+  const pages = Array.from({ length: totalPage }, (_, i) => i + 1)
   return (
     <div className="mt-5">
       <table className="table table-zebra table-normal table-auto w-full">

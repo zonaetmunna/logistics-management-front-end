@@ -1,5 +1,5 @@
-import React from "react"
 import { useForm } from "react-hook-form"
+import { IPostProductData, IProduct } from "../../types"
 
 interface EditBrandModalProps {
   onClose: () => void
@@ -16,7 +16,15 @@ const UpdateProductModal = ({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IPostProductData>({})
+  } = useForm<IPostProductData>({
+    defaultValues: {
+      name: product.name,
+      description: product.description,
+      category: product.category,
+      brand: product.brand,
+      unit: product.unit,
+    },
+  })
 
   const onSubmit = (data: IPostProductData) => {
     onUpdateProduct(data)
@@ -84,6 +92,51 @@ const UpdateProductModal = ({
                   {errors.description && (
                     <p className="text-red-500 text-xs italic">
                       {errors.description.message}
+                    </p>
+                  )}
+                </div>
+                <div className="mb-4">
+                  <label
+                    htmlFor="category"
+                    className="block text-gray-700 font-bold mb-2"
+                  >
+                    Category
+                  </label>
+                  <input
+                    type="text"
+                    {...register("category", {
+                      required: "This field is required",
+                    })}
+                    className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                      errors.category ? "border-red-500" : ""
+                    }`}
+                  />
+                  {errors.category && (
+                    <p className="text-red-500 text-xs italic">
+                      {errors.category.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    htmlFor="brand"
+                    className="block text-gray-700 font-bold mb-2"
+                  >
+                    Brand
+                  </label>
+                  <input
+                    type="text"
+                    {...register("brand", {
+                      required: "This field is required",
+                    })}
+                    className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                      errors.brand ? "border-red-500" : ""
+                    }`}
+                  />
+                  {errors.brand && (
+                    <p className="text-red-500 text-xs italic">
+                      {errors.brand.message}
                     </p>
                   )}
                 </div>

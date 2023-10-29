@@ -1,26 +1,24 @@
-import React, { useMemo, useState } from "react"
-import {
-  useGetProductsQuery,
-  useRemoveProductMutation,
-  useUpdateProductMutation,
-} from "../../features/products/productApi"
+import { useMemo, useState } from "react"
 import {
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
   FaChevronLeft,
   FaChevronRight,
   FaEdit,
-  FaSearch,
   FaTimesCircle,
   FaTrash,
 } from "react-icons/fa"
-import Pagination from "../../components/common/Pagination"
-import UpdateProductModal from "../../components/products/UpdateProductModal"
-import DeleteModal from "../../components/common/DeleteModal"
-import DeleteProductModal from "../../components/products/DeleteProductModal"
-import AddProductModal from "../../components/products/AddProductModal"
-import Select from "react-select"
+import {
+  useGetProductsQuery,
+  useRemoveProductMutation,
+  useUpdateProductMutation,
+} from "../../features/products/productApi"
+// import Pagination from "../../components/common/Pagination"  //use future
 import { BiBullseye } from "react-icons/bi"
+import Select from "react-select"
+import DeleteProductModal from "../../components/products/DeleteProductModal"
+import SingleProductModal from "../../components/products/SingleProductModal"
+import UpdateProductModal from "../../components/products/UpdateProductModal"
 import { useGetCategoryQuery } from "../../features/category/categoryApi"
 import {
   CategoryOption,
@@ -35,6 +33,7 @@ const ProductList = () => {
   const [searchText, setSearchText] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(10)
+  const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null)
 
   // api data
   const { data, error, isError, isLoading } = useGetProductsQuery({
@@ -47,7 +46,7 @@ const ProductList = () => {
   const products = data?.data.products
 
   const { data: categoryData } = useGetCategoryQuery({})
-  const categories = categoryData?.data.category
+  const categories = categoryData?.data.categories
   console.log(categories)
 
   const handleCategoryChange = (selected: CategoryOption | null) => {
@@ -85,8 +84,7 @@ const ProductList = () => {
   const [updateProduct] = useUpdateProductMutation()
   const [deleteProduct] = useRemoveProductMutation()
 
-  const [slectedProduct, setSelectedProduct] = useState<IProduct | null>(null)
-  const [isSingleBrandModalOpen, setIsSingleBrandModalOpen] =
+  const [isSingleProductModalOpen, setIsSingleProductModalOpen] =
     useState<boolean>(false)
   const [isUpdateProductModalOpen, setIsUpdateProductModalOpen] =
     useState<boolean>(false)
@@ -103,7 +101,7 @@ const ProductList = () => {
 
   const handleProductClick = (product: IProduct) => {
     setSelectedProduct(product)
-    setIsSingleBrandModalOpen(true)
+    setIsSingleProductModalOpen(true)
   }
 
   const handleUpdateClick = (product: IProduct) => {
@@ -298,25 +296,25 @@ const ProductList = () => {
       </nav>
       {/* modal */}
 
-      {/* {isSingleBrandModalOpen && (
-        <ViewProduct
-          onClose={() => setIsSingleBrandModalOpen(false)}
-          brand={selectedBrand}
+      {isSingleProductModalOpen && (
+        <SingleProductModal
+          onClose={() => setIsSingleProductModalOpen(false)}
+          product={selectedProduct}
         />
-      )} */}
+      )}
 
-      {slectedProduct && isUpdateProductModalOpen && (
+      {selectedProduct && isUpdateProductModalOpen && (
         <UpdateProductModal
           onClose={() => setIsUpdateProductModalOpen(false)}
           onUpdateProduct={handleUpdateProduct}
-          product={slectedProduct}
+          product={selectedProduct}
         />
       )}
-      {slectedProduct && isDeleteProductModalOpen && (
+      {selectedProduct && isDeleteProductModalOpen && (
         <DeleteProductModal
           onClose={() => setIsDeleteProductModalOpen(false)}
           onDeleteProduct={handleDeleteProduct}
-          product={slectedProduct}
+          product={selectedProduct}
         />
       )}
     </div>

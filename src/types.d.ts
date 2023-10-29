@@ -1,87 +1,95 @@
-// product interface
-
+interface IAuth {
+  _id: string
+  firstName: string
+  lastName: string
+  email: string
+  role: string
+  profileImage: string
+  token: string
+}
 interface IProduct {
-    _id: string;
-    name: string;
-    description: string;
-    imageURLs: [];
-    otherImages: [];
-    unit: string;
-    category: string;
-    brand: {
-        id: string;
-        name: "string"
-    };
-    __v: number;
+  _id: string
+  name: string
+  description: string
+  imageURLs?: []
+  otherImages?: []
+  unit: string
+  category: string
+  brand: {
+    id: string
+    name: "string"
+  }
+  __v: number
 }
 
 interface ITotalProductData {
-    status: string;
-    data: {
-        total: number;
-        totalPage: number | null;
-        products: IProduct[];
-    };
+  status: string
+  data: {
+    total: number
+    totalPage: number | null
+    products: IProduct[]
+  }
 }
 
 interface ITotalSingleProductData {
-    status: "success";
-    data: IProduct;
+  status: "success"
+  data: IProduct
 }
 
 interface QueryParams {
-    category?: Category | string;
-    search?: string;
-    page?: number;
-    limit?: number;
+  category?: Category | string
+  search?: string
+  page?: number
+  limit?: number
 }
 
 interface IPostProductData {
-    name: string;
-    description: string;
-    productImage: string;
-    otherImages: string;
-    unit: string;
-    category: string;
-    brandName: string;
-    brandID: string;
+  name: string
+  description: string
+  productImage: string
+  otherImages: string
+  unit: string
+  category: string
+  brand: {
+    id: string
+    name: "string"
+  }
 }
 
 // BrandData
 interface BrandData {
-    name: string
-    email: string
-    description: string
-    location: string
-    status: string
+  name: string
+  email: string
+  description: string
+  location: string
+  status: string
 }
 // category data
 
 interface ICategory {
-    _id?: string;
-    name: string;
-    createdAt?: string;
-    updatedAt?: string;
-    __v?: number;
-    createdBy?: string;
+  _id?: string
+  name: string
+  createdAt?: string
+  updatedAt?: string
+  __v?: number
+  createdBy?: string
 }
 
 interface ITotalCategoryData {
-    status: string;
-    data: {
-        total: number;
-        totalPage: number | null;
-        category: ICategory[];
-    };
+  status: string
+  data: {
+    total: number
+    totalPage: number | null
+    categories: ICategory[]
+  }
 }
 
 interface ITotalSingleCategory {
-    status: "success";
-    data: ICategory;
+  status: "success"
+  data: ICategory
 }
 
 export interface CategoryOption {
-    label: string;
-    value: string;
+  label: string
+  value: string
 }
-

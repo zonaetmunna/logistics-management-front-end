@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
+import { FaUserCircle } from "react-icons/fa"
+import { FiMaximize, FiMinimize, FiMoon, FiSun } from "react-icons/fi"
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-import { FiMaximize, FiMinimize, FiMoon, FiSun } from "react-icons/fi"
-import { FaUserCircle, FaBell, FaEnvelope } from "react-icons/fa"
-import { BiMessageSquare } from "react-icons/bi"
 
 const Navbar = () => {
   const [isFullscreen, setIsFullscreen] = useState(false)
@@ -59,7 +58,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`px-4 py-3 ${
+      className={`fixed top-0 left-0 w-full z-10 px-4 py-3 ${
         isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-dark"
       }`}
     >
