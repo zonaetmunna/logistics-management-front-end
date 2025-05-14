@@ -1,0 +1,673 @@
+{
+  "orders": [
+    {
+      "id": "ORD-2023-1001",
+      "orderDate": "2023-11-10T09:15:32Z",
+      "status": "Delivered",
+      "customer": {
+        "id": "CUST-001",
+        "name": "Acme Corporation",
+        "email": "orders@acmecorp.com",
+        "phone": "+1-555-123-4567",
+        "address": {
+          "street": "123 Business Avenue",
+          "city": "Chicago",
+          "state": "IL",
+          "zip": "60601",
+          "country": "USA"
+        },
+        "type": "Business"
+      },
+      "items": [
+        {
+          "productId": "P001",
+          "productName": "Wireless Bluetooth Headphones",
+          "sku": "TECH-BT-001",
+          "quantity": 25,
+          "unitPrice": 79.99,
+          "totalPrice": 1999.75
+        },
+        {
+          "productId": "P005",
+          "productName": "Smart LED Light Bulb",
+          "sku": "TECH-LGT-005",
+          "quantity": 50,
+          "unitPrice": 34.99,
+          "totalPrice": 1749.5
+        }
+      ],
+      "shipping": {
+        "method": "Express",
+        "trackingNumber": "EXP1234567890",
+        "cost": 45.99,
+        "estimatedDelivery": "2023-11-15T00:00:00Z",
+        "actualDelivery": "2023-11-14T14:23:00Z",
+        "carrier": "FedEx"
+      },
+      "payment": {
+        "method": "Credit Card",
+        "status": "Paid",
+        "transactionId": "TXN-98765432",
+        "date": "2023-11-10T09:15:32Z",
+        "amount": 3795.24,
+        "currency": "USD"
+      },
+      "subtotal": 3749.25,
+      "tax": 337.43,
+      "shippingCost": 45.99,
+      "discount": 0,
+      "total": 4132.67,
+      "notes": "Corporate order for annual tech refresh",
+      "createdBy": "Jane Smith",
+      "warehouse": "Main",
+      "tags": ["corporate", "tech", "bulk"]
+    },
+    {
+      "id": "ORD-2023-1002",
+      "orderDate": "2023-11-11T14:23:10Z",
+      "status": "Processing",
+      "customer": {
+        "id": "CUST-002",
+        "name": "Springfield Schools",
+        "email": "purchasing@springfieldschools.edu",
+        "phone": "+1-555-234-5678",
+        "address": {
+          "street": "456 Education Parkway",
+          "city": "Springfield",
+          "state": "OH",
+          "zip": "45501",
+          "country": "USA"
+        },
+        "type": "Education"
+      },
+      "items": [
+        {
+          "productId": "P010",
+          "productName": "Ultra HD Monitor",
+          "sku": "TECH-MON-010",
+          "quantity": 15,
+          "unitPrice": 349.99,
+          "totalPrice": 5249.85
+        },
+        {
+          "productId": "P002",
+          "productName": "Ergonomic Office Chair",
+          "sku": "FURN-CHR-002",
+          "quantity": 20,
+          "unitPrice": 249.99,
+          "totalPrice": 4999.8
+        }
+      ],
+      "shipping": {
+        "method": "Standard",
+        "trackingNumber": "STD9876543210",
+        "cost": 120.0,
+        "estimatedDelivery": "2023-11-18T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "UPS"
+      },
+      "payment": {
+        "method": "Purchase Order",
+        "status": "Pending",
+        "transactionId": "PO-23456789",
+        "date": null,
+        "amount": 11069.64,
+        "currency": "USD"
+      },
+      "subtotal": 10249.65,
+      "tax": 819.97,
+      "shippingCost": 120.0,
+      "discount": 120.0,
+      "total": 11069.62,
+      "notes": "School computer lab upgrade. PO approval pending.",
+      "createdBy": "Michael Johnson",
+      "warehouse": "Main",
+      "tags": ["education", "tax exempt", "bulk"]
+    },
+    {
+      "id": "ORD-2023-1003",
+      "orderDate": "2023-11-12T10:45:22Z",
+      "status": "Shipped",
+      "customer": {
+        "id": "CUST-003",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+1-555-345-6789",
+        "address": {
+          "street": "789 Residential Street",
+          "city": "Boston",
+          "state": "MA",
+          "zip": "02108",
+          "country": "USA"
+        },
+        "type": "Individual"
+      },
+      "items": [
+        {
+          "productId": "P008",
+          "productName": "Fitness Tracking Watch",
+          "sku": "TECH-WCH-008",
+          "quantity": 1,
+          "unitPrice": 149.99,
+          "totalPrice": 149.99
+        },
+        {
+          "productId": "P003",
+          "productName": "Stainless Steel Water Bottle",
+          "sku": "HOME-KIT-003",
+          "quantity": 2,
+          "unitPrice": 19.99,
+          "totalPrice": 39.98
+        }
+      ],
+      "shipping": {
+        "method": "Standard",
+        "trackingNumber": "STD1122334455",
+        "cost": 8.99,
+        "estimatedDelivery": "2023-11-16T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "USPS"
+      },
+      "payment": {
+        "method": "PayPal",
+        "status": "Paid",
+        "transactionId": "PP-ABCDEF1234",
+        "date": "2023-11-12T10:45:22Z",
+        "amount": 215.91,
+        "currency": "USD"
+      },
+      "subtotal": 189.97,
+      "tax": 16.95,
+      "shippingCost": 8.99,
+      "discount": 0,
+      "total": 215.91,
+      "notes": "Customer requested gift wrapping",
+      "createdBy": "Robert Lee",
+      "warehouse": "Main",
+      "tags": ["individual", "fitness", "gift"]
+    },
+    {
+      "id": "ORD-2023-1004",
+      "orderDate": "2023-11-13T16:10:05Z",
+      "status": "Pending",
+      "customer": {
+        "id": "CUST-004",
+        "name": "Greenfield Restaurants",
+        "email": "supplies@greenfieldrestaurants.com",
+        "phone": "+1-555-456-7890",
+        "address": {
+          "street": "101 Culinary Boulevard",
+          "city": "San Diego",
+          "state": "CA",
+          "zip": "92101",
+          "country": "USA"
+        },
+        "type": "Business"
+      },
+      "items": [
+        {
+          "productId": "P007",
+          "productName": "Premium Coffee Beans",
+          "sku": "FOOD-COF-007",
+          "quantity": 30,
+          "unitPrice": 24.99,
+          "totalPrice": 749.7
+        },
+        {
+          "productId": "P009",
+          "productName": "Bamboo Cutting Board",
+          "sku": "HOME-KIT-009",
+          "quantity": 15,
+          "unitPrice": 34.99,
+          "totalPrice": 524.85
+        }
+      ],
+      "shipping": {
+        "method": "Express",
+        "trackingNumber": null,
+        "cost": 35.0,
+        "estimatedDelivery": "2023-11-16T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "FedEx"
+      },
+      "payment": {
+        "method": "Credit Card",
+        "status": "Authorized",
+        "transactionId": "TXN-45678901",
+        "date": "2023-11-13T16:10:05Z",
+        "amount": 1420.9,
+        "currency": "USD"
+      },
+      "subtotal": 1274.55,
+      "tax": 111.35,
+      "shippingCost": 35.0,
+      "discount": 0,
+      "total": 1420.9,
+      "notes": "Regular monthly order",
+      "createdBy": "Emily Wilson",
+      "warehouse": "Secondary",
+      "tags": ["business", "restaurant", "recurring"]
+    },
+    {
+      "id": "ORD-2023-1005",
+      "orderDate": "2023-11-14T08:32:40Z",
+      "status": "Cancelled",
+      "customer": {
+        "id": "CUST-005",
+        "name": "Sarah Thompson",
+        "email": "sarah.thompson@example.com",
+        "phone": "+1-555-567-8901",
+        "address": {
+          "street": "202 Maple Lane",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "80202",
+          "country": "USA"
+        },
+        "type": "Individual"
+      },
+      "items": [
+        {
+          "productId": "P006",
+          "productName": "Wireless Charging Pad",
+          "sku": "TECH-CHG-006",
+          "quantity": 1,
+          "unitPrice": 29.99,
+          "totalPrice": 29.99
+        }
+      ],
+      "shipping": {
+        "method": "Standard",
+        "trackingNumber": null,
+        "cost": 5.99,
+        "estimatedDelivery": "2023-11-19T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "USPS"
+      },
+      "payment": {
+        "method": "Credit Card",
+        "status": "Refunded",
+        "transactionId": "TXN-56789012",
+        "date": "2023-11-14T08:32:40Z",
+        "amount": 38.38,
+        "currency": "USD"
+      },
+      "subtotal": 29.99,
+      "tax": 2.4,
+      "shippingCost": 5.99,
+      "discount": 0,
+      "total": 38.38,
+      "notes": "Order cancelled due to product out of stock",
+      "createdBy": "David Chen",
+      "warehouse": "Main",
+      "tags": ["individual", "cancelled", "out of stock"]
+    },
+    {
+      "id": "ORD-2023-1006",
+      "orderDate": "2023-11-14T11:05:18Z",
+      "status": "Processing",
+      "customer": {
+        "id": "CUST-006",
+        "name": "City Hospital",
+        "email": "procurement@cityhospital.org",
+        "phone": "+1-555-678-9012",
+        "address": {
+          "street": "303 Medical Center Drive",
+          "city": "Philadelphia",
+          "state": "PA",
+          "zip": "19104",
+          "country": "USA"
+        },
+        "type": "Healthcare"
+      },
+      "items": [
+        {
+          "productId": "P002",
+          "productName": "Ergonomic Office Chair",
+          "sku": "FURN-CHR-002",
+          "quantity": 30,
+          "unitPrice": 249.99,
+          "totalPrice": 7499.7
+        },
+        {
+          "productId": "P005",
+          "productName": "Smart LED Light Bulb",
+          "sku": "TECH-LGT-005",
+          "quantity": 100,
+          "unitPrice": 34.99,
+          "totalPrice": 3499.0
+        },
+        {
+          "productId": "P001",
+          "productName": "Wireless Bluetooth Headphones",
+          "sku": "TECH-BT-001",
+          "quantity": 15,
+          "unitPrice": 79.99,
+          "totalPrice": 1199.85
+        }
+      ],
+      "shipping": {
+        "method": "Freight",
+        "trackingNumber": "FRT-789012345",
+        "cost": 250.0,
+        "estimatedDelivery": "2023-11-21T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "Freight Express"
+      },
+      "payment": {
+        "method": "Purchase Order",
+        "status": "Pending",
+        "transactionId": "PO-34567890",
+        "date": null,
+        "amount": 13224.01,
+        "currency": "USD"
+      },
+      "subtotal": 12198.55,
+      "tax": 975.88,
+      "shippingCost": 250.0,
+      "discount": 200.42,
+      "total": 13224.01,
+      "notes": "Hospital administrative wing refurbishment",
+      "createdBy": "Jennifer Adams",
+      "warehouse": "Main",
+      "tags": ["healthcare", "bulk", "institutional"]
+    },
+    {
+      "id": "ORD-2023-1007",
+      "orderDate": "2023-11-15T13:47:56Z",
+      "status": "Pending",
+      "customer": {
+        "id": "CUST-007",
+        "name": "Tech Startups Inc.",
+        "email": "office@techstartups.co",
+        "phone": "+1-555-789-0123",
+        "address": {
+          "street": "404 Innovation Way",
+          "city": "Austin",
+          "state": "TX",
+          "zip": "78701",
+          "country": "USA"
+        },
+        "type": "Business"
+      },
+      "items": [
+        {
+          "productId": "P010",
+          "productName": "Ultra HD Monitor",
+          "sku": "TECH-MON-010",
+          "quantity": 8,
+          "unitPrice": 349.99,
+          "totalPrice": 2799.92
+        },
+        {
+          "productId": "P008",
+          "productName": "Fitness Tracking Watch",
+          "sku": "TECH-WCH-008",
+          "quantity": 12,
+          "unitPrice": 149.99,
+          "totalPrice": 1799.88
+        },
+        {
+          "productId": "P002",
+          "productName": "Ergonomic Office Chair",
+          "sku": "FURN-CHR-002",
+          "quantity": 12,
+          "unitPrice": 249.99,
+          "totalPrice": 2999.88
+        }
+      ],
+      "shipping": {
+        "method": "Express",
+        "trackingNumber": null,
+        "cost": 125.0,
+        "estimatedDelivery": "2023-11-18T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "UPS"
+      },
+      "payment": {
+        "method": "Credit Card",
+        "status": "Authorized",
+        "transactionId": "TXN-67890123",
+        "date": "2023-11-15T13:47:56Z",
+        "amount": 8342.0,
+        "currency": "USD"
+      },
+      "subtotal": 7599.68,
+      "tax": 617.32,
+      "shippingCost": 125.0,
+      "discount": 0,
+      "total": 8342.0,
+      "notes": "New office setup",
+      "createdBy": "Alex Morgan",
+      "warehouse": "Main",
+      "tags": ["business", "startup", "tech"]
+    },
+    {
+      "id": "ORD-2023-1008",
+      "orderDate": "2023-11-16T09:20:33Z",
+      "status": "Pending",
+      "customer": {
+        "id": "CUST-008",
+        "name": "Emma Davis",
+        "email": "emma.davis@example.com",
+        "phone": "+1-555-890-1234",
+        "address": {
+          "street": "505 Pine Avenue",
+          "city": "Seattle",
+          "state": "WA",
+          "zip": "98101",
+          "country": "USA"
+        },
+        "type": "Individual"
+      },
+      "items": [
+        {
+          "productId": "P005",
+          "productName": "Smart LED Light Bulb",
+          "sku": "TECH-LGT-005",
+          "quantity": 5,
+          "unitPrice": 34.99,
+          "totalPrice": 174.95
+        },
+        {
+          "productId": "P003",
+          "productName": "Stainless Steel Water Bottle",
+          "sku": "HOME-KIT-003",
+          "quantity": 1,
+          "unitPrice": 19.99,
+          "totalPrice": 19.99
+        }
+      ],
+      "shipping": {
+        "method": "Standard",
+        "trackingNumber": null,
+        "cost": 8.99,
+        "estimatedDelivery": "2023-11-21T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "USPS"
+      },
+      "payment": {
+        "method": "PayPal",
+        "status": "Paid",
+        "transactionId": "PP-BCDEFG2345",
+        "date": "2023-11-16T09:20:33Z",
+        "amount": 223.47,
+        "currency": "USD"
+      },
+      "subtotal": 194.94,
+      "tax": 19.54,
+      "shippingCost": 8.99,
+      "discount": 0,
+      "total": 223.47,
+      "notes": "Home smart lighting upgrade",
+      "createdBy": "Chris Wilson",
+      "warehouse": "Main",
+      "tags": ["individual", "smart home"]
+    },
+    {
+      "id": "ORD-2023-1009",
+      "orderDate": "2023-11-17T15:35:42Z",
+      "status": "Pending",
+      "customer": {
+        "id": "CUST-009",
+        "name": "Sunset Cafe Chain",
+        "email": "purchasing@sunsetcafe.com",
+        "phone": "+1-555-901-2345",
+        "address": {
+          "street": "606 Sunset Boulevard",
+          "city": "Los Angeles",
+          "state": "CA",
+          "zip": "90028",
+          "country": "USA"
+        },
+        "type": "Business"
+      },
+      "items": [
+        {
+          "productId": "P007",
+          "productName": "Premium Coffee Beans",
+          "sku": "FOOD-COF-007",
+          "quantity": 50,
+          "unitPrice": 24.99,
+          "totalPrice": 1249.5
+        },
+        {
+          "productId": "P009",
+          "productName": "Bamboo Cutting Board",
+          "sku": "HOME-KIT-009",
+          "quantity": 10,
+          "unitPrice": 34.99,
+          "totalPrice": 349.9
+        }
+      ],
+      "shipping": {
+        "method": "Express",
+        "trackingNumber": null,
+        "cost": 45.0,
+        "estimatedDelivery": "2023-11-20T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "FedEx"
+      },
+      "payment": {
+        "method": "Credit Card",
+        "status": "Authorized",
+        "transactionId": "TXN-78901234",
+        "date": "2023-11-17T15:35:42Z",
+        "amount": 1763.58,
+        "currency": "USD"
+      },
+      "subtotal": 1599.4,
+      "tax": 119.18,
+      "shippingCost": 45.0,
+      "discount": 0,
+      "total": 1763.58,
+      "notes": "Monthly cafe supplies order",
+      "createdBy": "Lisa Chen",
+      "warehouse": "Secondary",
+      "tags": ["business", "cafe", "recurring"]
+    },
+    {
+      "id": "ORD-2023-1010",
+      "orderDate": "2023-11-18T10:12:27Z",
+      "status": "Pending",
+      "customer": {
+        "id": "CUST-010",
+        "name": "Global Enterprises",
+        "email": "procurement@globalenterprises.com",
+        "phone": "+1-555-012-3456",
+        "address": {
+          "street": "707 Corporate Plaza",
+          "city": "New York",
+          "state": "NY",
+          "zip": "10001",
+          "country": "USA"
+        },
+        "type": "Business"
+      },
+      "items": [
+        {
+          "productId": "P001",
+          "productName": "Wireless Bluetooth Headphones",
+          "sku": "TECH-BT-001",
+          "quantity": 100,
+          "unitPrice": 79.99,
+          "totalPrice": 7999.0
+        },
+        {
+          "productId": "P002",
+          "productName": "Ergonomic Office Chair",
+          "sku": "FURN-CHR-002",
+          "quantity": 50,
+          "unitPrice": 249.99,
+          "totalPrice": 12499.5
+        },
+        {
+          "productId": "P005",
+          "productName": "Smart LED Light Bulb",
+          "sku": "TECH-LGT-005",
+          "quantity": 200,
+          "unitPrice": 34.99,
+          "totalPrice": 6998.0
+        },
+        {
+          "productId": "P010",
+          "productName": "Ultra HD Monitor",
+          "sku": "TECH-MON-010",
+          "quantity": 50,
+          "unitPrice": 349.99,
+          "totalPrice": 17499.5
+        }
+      ],
+      "shipping": {
+        "method": "Freight",
+        "trackingNumber": null,
+        "cost": 500.0,
+        "estimatedDelivery": "2023-11-25T00:00:00Z",
+        "actualDelivery": null,
+        "carrier": "Freight Express"
+      },
+      "payment": {
+        "method": "Purchase Order",
+        "status": "Pending",
+        "transactionId": "PO-45678901",
+        "date": null,
+        "amount": 49043.8,
+        "currency": "USD"
+      },
+      "subtotal": 44996.0,
+      "tax": 3599.68,
+      "shippingCost": 500.0,
+      "discount": 51.88,
+      "total": 49043.8,
+      "notes": "Corporate headquarters remodel - RUSH ORDER",
+      "createdBy": "Thomas Walker",
+      "warehouse": "Main",
+      "tags": ["business", "corporate", "bulk", "rush"]
+    }
+  ],
+  "orderStatuses": [
+    "Pending",
+    "Processing",
+    "Shipped",
+    "Delivered",
+    "Cancelled",
+    "On Hold",
+    "Returned"
+  ],
+  "paymentMethods": [
+    "Credit Card",
+    "PayPal",
+    "Bank Transfer",
+    "Purchase Order",
+    "Cash on Delivery",
+    "Check"
+  ],
+  "shippingMethods": [
+    "Standard",
+    "Express",
+    "Overnight",
+    "Freight",
+    "Local Pickup",
+    "International"
+  ]
+}

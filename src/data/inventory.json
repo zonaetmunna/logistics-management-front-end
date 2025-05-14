@@ -1,0 +1,392 @@
+{
+  "products": [
+    {
+      "id": "P001",
+      "name": "Wireless Bluetooth Headphones",
+      "sku": "TECH-BT-001",
+      "category": "Electronics",
+      "subCategory": "Audio",
+      "currentStock": 125,
+      "minimumStock": 25,
+      "reorderPoint": 50,
+      "unitCost": 35.5,
+      "sellingPrice": 79.99,
+      "location": {
+        "warehouse": "Main",
+        "aisle": "A",
+        "rack": "3",
+        "bin": "7"
+      },
+      "supplier": "TechGadgets Inc.",
+      "supplierId": "SUP001",
+      "lastRestocked": "2023-11-05T08:30:00Z",
+      "tags": ["wireless", "bluetooth", "headphones", "audio"],
+      "imageUrl": "https://example.com/images/products/headphones.jpg",
+      "dimensions": {
+        "length": 8,
+        "width": 6,
+        "height": 3,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 0.8,
+        "unit": "lbs"
+      },
+      "barcode": "978020137962",
+      "status": "Active"
+    },
+    {
+      "id": "P002",
+      "name": "Ergonomic Office Chair",
+      "sku": "FURN-CHR-002",
+      "category": "Furniture",
+      "subCategory": "Office",
+      "currentStock": 43,
+      "minimumStock": 10,
+      "reorderPoint": 20,
+      "unitCost": 120.75,
+      "sellingPrice": 249.99,
+      "location": {
+        "warehouse": "Main",
+        "aisle": "C",
+        "rack": "1",
+        "bin": "2"
+      },
+      "supplier": "Modern Furniture Co.",
+      "supplierId": "SUP003",
+      "lastRestocked": "2023-10-28T10:15:00Z",
+      "tags": ["chair", "office", "ergonomic", "furniture"],
+      "imageUrl": "https://example.com/images/products/office-chair.jpg",
+      "dimensions": {
+        "length": 26,
+        "width": 26,
+        "height": 48,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 35,
+        "unit": "lbs"
+      },
+      "barcode": "978020137963",
+      "status": "Active"
+    },
+    {
+      "id": "P003",
+      "name": "Stainless Steel Water Bottle",
+      "sku": "HOME-KIT-003",
+      "category": "Home Goods",
+      "subCategory": "Kitchen",
+      "currentStock": 210,
+      "minimumStock": 50,
+      "reorderPoint": 75,
+      "unitCost": 8.25,
+      "sellingPrice": 19.99,
+      "location": {
+        "warehouse": "Secondary",
+        "aisle": "B",
+        "rack": "5",
+        "bin": "3"
+      },
+      "supplier": "HomeEssentials Ltd.",
+      "supplierId": "SUP005",
+      "lastRestocked": "2023-11-10T14:45:00Z",
+      "tags": ["water bottle", "stainless steel", "kitchen", "eco-friendly"],
+      "imageUrl": "https://example.com/images/products/water-bottle.jpg",
+      "dimensions": {
+        "length": 3,
+        "width": 3,
+        "height": 10,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 0.5,
+        "unit": "lbs"
+      },
+      "barcode": "978020137964",
+      "status": "Active"
+    },
+    {
+      "id": "P004",
+      "name": "Organic Cotton T-Shirt",
+      "sku": "APRL-TSH-004",
+      "category": "Apparel",
+      "subCategory": "T-Shirts",
+      "currentStock": 15,
+      "minimumStock": 20,
+      "reorderPoint": 35,
+      "unitCost": 12.5,
+      "sellingPrice": 29.99,
+      "location": {
+        "warehouse": "Main",
+        "aisle": "D",
+        "rack": "7",
+        "bin": "9"
+      },
+      "supplier": "EcoApparel Inc.",
+      "supplierId": "SUP008",
+      "lastRestocked": "2023-10-15T09:30:00Z",
+      "tags": ["t-shirt", "organic", "cotton", "apparel"],
+      "imageUrl": "https://example.com/images/products/tshirt.jpg",
+      "dimensions": {
+        "length": 12,
+        "width": 8,
+        "height": 1,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 0.3,
+        "unit": "lbs"
+      },
+      "barcode": "978020137965",
+      "status": "Low Stock"
+    },
+    {
+      "id": "P005",
+      "name": "Smart LED Light Bulb",
+      "sku": "TECH-LGT-005",
+      "category": "Electronics",
+      "subCategory": "Smart Home",
+      "currentStock": 87,
+      "minimumStock": 30,
+      "reorderPoint": 45,
+      "unitCost": 18.2,
+      "sellingPrice": 34.99,
+      "location": {
+        "warehouse": "Main",
+        "aisle": "A",
+        "rack": "2",
+        "bin": "4"
+      },
+      "supplier": "TechGadgets Inc.",
+      "supplierId": "SUP001",
+      "lastRestocked": "2023-11-02T11:15:00Z",
+      "tags": ["smart home", "LED", "light bulb", "wifi"],
+      "imageUrl": "https://example.com/images/products/smart-bulb.jpg",
+      "dimensions": {
+        "length": 2.5,
+        "width": 2.5,
+        "height": 4.5,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 0.2,
+        "unit": "lbs"
+      },
+      "barcode": "978020137966",
+      "status": "Active"
+    },
+    {
+      "id": "P006",
+      "name": "Wireless Charging Pad",
+      "sku": "TECH-CHG-006",
+      "category": "Electronics",
+      "subCategory": "Accessories",
+      "currentStock": 0,
+      "minimumStock": 15,
+      "reorderPoint": 25,
+      "unitCost": 15.75,
+      "sellingPrice": 29.99,
+      "location": {
+        "warehouse": "Main",
+        "aisle": "A",
+        "rack": "4",
+        "bin": "2"
+      },
+      "supplier": "TechGadgets Inc.",
+      "supplierId": "SUP001",
+      "lastRestocked": "2023-09-28T13:20:00Z",
+      "tags": ["wireless", "charging", "accessories", "smartphone"],
+      "imageUrl": "https://example.com/images/products/charging-pad.jpg",
+      "dimensions": {
+        "length": 4,
+        "width": 4,
+        "height": 0.5,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 0.3,
+        "unit": "lbs"
+      },
+      "barcode": "978020137967",
+      "status": "Out of Stock"
+    },
+    {
+      "id": "P007",
+      "name": "Premium Coffee Beans",
+      "sku": "FOOD-COF-007",
+      "category": "Food & Beverage",
+      "subCategory": "Coffee",
+      "currentStock": 56,
+      "minimumStock": 25,
+      "reorderPoint": 40,
+      "unitCost": 12.25,
+      "sellingPrice": 24.99,
+      "location": {
+        "warehouse": "Secondary",
+        "aisle": "F",
+        "rack": "2",
+        "bin": "5"
+      },
+      "supplier": "Global Foods Ltd.",
+      "supplierId": "SUP010",
+      "lastRestocked": "2023-11-08T07:45:00Z",
+      "tags": ["coffee beans", "premium", "food", "organic"],
+      "imageUrl": "https://example.com/images/products/coffee-beans.jpg",
+      "dimensions": {
+        "length": 5,
+        "width": 3,
+        "height": 8,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 1,
+        "unit": "lbs"
+      },
+      "barcode": "978020137968",
+      "status": "Active"
+    },
+    {
+      "id": "P008",
+      "name": "Fitness Tracking Watch",
+      "sku": "TECH-WCH-008",
+      "category": "Electronics",
+      "subCategory": "Wearables",
+      "currentStock": 32,
+      "minimumStock": 10,
+      "reorderPoint": 20,
+      "unitCost": 85.5,
+      "sellingPrice": 149.99,
+      "location": {
+        "warehouse": "Main",
+        "aisle": "A",
+        "rack": "1",
+        "bin": "3"
+      },
+      "supplier": "TechGadgets Inc.",
+      "supplierId": "SUP001",
+      "lastRestocked": "2023-10-20T15:30:00Z",
+      "tags": ["fitness", "tracking", "watch", "wearable", "tech"],
+      "imageUrl": "https://example.com/images/products/fitness-watch.jpg",
+      "dimensions": {
+        "length": 2,
+        "width": 1.5,
+        "height": 0.5,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 0.15,
+        "unit": "lbs"
+      },
+      "barcode": "978020137969",
+      "status": "Active"
+    },
+    {
+      "id": "P009",
+      "name": "Bamboo Cutting Board",
+      "sku": "HOME-KIT-009",
+      "category": "Home Goods",
+      "subCategory": "Kitchen",
+      "currentStock": 67,
+      "minimumStock": 15,
+      "reorderPoint": 30,
+      "unitCost": 14.25,
+      "sellingPrice": 34.99,
+      "location": {
+        "warehouse": "Secondary",
+        "aisle": "B",
+        "rack": "4",
+        "bin": "1"
+      },
+      "supplier": "HomeEssentials Ltd.",
+      "supplierId": "SUP005",
+      "lastRestocked": "2023-11-01T12:15:00Z",
+      "tags": ["cutting board", "bamboo", "kitchen", "eco-friendly"],
+      "imageUrl": "https://example.com/images/products/cutting-board.jpg",
+      "dimensions": {
+        "length": 18,
+        "width": 12,
+        "height": 0.75,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 2.1,
+        "unit": "lbs"
+      },
+      "barcode": "978020137970",
+      "status": "Active"
+    },
+    {
+      "id": "P010",
+      "name": "Ultra HD Monitor",
+      "sku": "TECH-MON-010",
+      "category": "Electronics",
+      "subCategory": "Computer Accessories",
+      "currentStock": 12,
+      "minimumStock": 5,
+      "reorderPoint": 10,
+      "unitCost": 210.5,
+      "sellingPrice": 349.99,
+      "location": {
+        "warehouse": "Main",
+        "aisle": "B",
+        "rack": "1",
+        "bin": "1"
+      },
+      "supplier": "ComputerWorld Inc.",
+      "supplierId": "SUP002",
+      "lastRestocked": "2023-10-12T09:00:00Z",
+      "tags": ["monitor", "ultra HD", "computer", "display"],
+      "imageUrl": "https://example.com/images/products/monitor.jpg",
+      "dimensions": {
+        "length": 24,
+        "width": 14,
+        "height": 3,
+        "unit": "inches"
+      },
+      "weight": {
+        "value": 12.5,
+        "unit": "lbs"
+      },
+      "barcode": "978020137971",
+      "status": "Active"
+    }
+  ],
+  "categories": [
+    {
+      "id": "CAT001",
+      "name": "Electronics",
+      "subCategories": [
+        "Audio",
+        "Smart Home",
+        "Accessories",
+        "Wearables",
+        "Computer Accessories"
+      ],
+      "productCount": 5
+    },
+    {
+      "id": "CAT002",
+      "name": "Furniture",
+      "subCategories": ["Office", "Home", "Outdoor"],
+      "productCount": 1
+    },
+    {
+      "id": "CAT003",
+      "name": "Home Goods",
+      "subCategories": ["Kitchen", "Bathroom", "Decor"],
+      "productCount": 2
+    },
+    {
+      "id": "CAT004",
+      "name": "Apparel",
+      "subCategories": ["T-Shirts", "Pants", "Shoes", "Accessories"],
+      "productCount": 1
+    },
+    {
+      "id": "CAT005",
+      "name": "Food & Beverage",
+      "subCategories": ["Coffee", "Tea", "Snacks", "Organic"],
+      "productCount": 1
+    }
+  ]
+}

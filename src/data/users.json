@@ -1,0 +1,601 @@
+{
+  "users": [
+    {
+      "id": "USR-001",
+      "username": "admin",
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@example.com",
+      "role": "Administrator",
+      "department": "Management",
+      "permissions": [
+        "view_all",
+        "edit_all",
+        "manage_users",
+        "manage_settings",
+        "view_reports",
+        "manage_inventory",
+        "manage_orders",
+        "manage_suppliers",
+        "manage_warehouse",
+        "manage_shipping"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-18T08:45:22Z",
+      "createdAt": "2022-01-01T09:00:00Z",
+      "avatar": "https://example.com/avatars/admin.jpg",
+      "preferences": {
+        "theme": "dark",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": false
+        },
+        "dashboard": {
+          "widgets": [
+            "inventory_summary",
+            "recent_orders",
+            "low_stock_alerts",
+            "daily_sales"
+          ],
+          "layout": "grid"
+        }
+      }
+    },
+    {
+      "id": "USR-002",
+      "username": "jsmith",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "role": "Inventory Manager",
+      "department": "Warehouse",
+      "permissions": [
+        "view_inventory",
+        "edit_inventory",
+        "view_orders",
+        "view_suppliers",
+        "view_warehouse",
+        "manage_inventory"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-17T15:30:45Z",
+      "createdAt": "2022-01-15T10:30:00Z",
+      "avatar": "https://example.com/avatars/jsmith.jpg",
+      "preferences": {
+        "theme": "light",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": true
+        },
+        "dashboard": {
+          "widgets": [
+            "inventory_summary",
+            "low_stock_alerts",
+            "inventory_movements",
+            "warehouse_capacity"
+          ],
+          "layout": "list"
+        }
+      }
+    },
+    {
+      "id": "USR-003",
+      "username": "mjohnson",
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "email": "michael.johnson@example.com",
+      "role": "Order Processor",
+      "department": "Sales",
+      "permissions": [
+        "view_orders",
+        "edit_orders",
+        "view_customers",
+        "view_inventory",
+        "manage_orders"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-18T09:15:33Z",
+      "createdAt": "2022-02-05T11:45:00Z",
+      "avatar": "https://example.com/avatars/mjohnson.jpg",
+      "preferences": {
+        "theme": "light",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": false,
+          "sms": false
+        },
+        "dashboard": {
+          "widgets": [
+            "recent_orders",
+            "order_status_summary",
+            "customer_orders",
+            "pending_shipments"
+          ],
+          "layout": "grid"
+        }
+      }
+    },
+    {
+      "id": "USR-004",
+      "username": "alee",
+      "firstName": "Amanda",
+      "lastName": "Lee",
+      "email": "amanda.lee@example.com",
+      "role": "Shipping Coordinator",
+      "department": "Logistics",
+      "permissions": [
+        "view_orders",
+        "view_shipping",
+        "edit_shipping",
+        "view_customers",
+        "view_warehouse",
+        "manage_shipping"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-17T16:45:12Z",
+      "createdAt": "2022-02-15T13:20:00Z",
+      "avatar": "https://example.com/avatars/alee.jpg",
+      "preferences": {
+        "theme": "light",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": true
+        },
+        "dashboard": {
+          "widgets": [
+            "pending_shipments",
+            "shipping_status",
+            "delivery_performance",
+            "carrier_performance"
+          ],
+          "layout": "grid"
+        }
+      }
+    },
+    {
+      "id": "USR-005",
+      "username": "rwilson",
+      "firstName": "Robert",
+      "lastName": "Wilson",
+      "email": "robert.wilson@example.com",
+      "role": "Warehouse Manager",
+      "department": "Warehouse",
+      "permissions": [
+        "view_warehouse",
+        "edit_warehouse",
+        "view_inventory",
+        "edit_inventory",
+        "view_shipping",
+        "view_orders",
+        "manage_warehouse"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-18T07:30:45Z",
+      "createdAt": "2022-01-20T08:15:00Z",
+      "avatar": "https://example.com/avatars/rwilson.jpg",
+      "preferences": {
+        "theme": "dark",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": true
+        },
+        "dashboard": {
+          "widgets": [
+            "warehouse_capacity",
+            "inventory_movements",
+            "receiving_schedule",
+            "staff_performance"
+          ],
+          "layout": "grid"
+        }
+      }
+    },
+    {
+      "id": "USR-006",
+      "username": "dchen",
+      "firstName": "David",
+      "lastName": "Chen",
+      "email": "david.chen@example.com",
+      "role": "Purchasing Agent",
+      "department": "Procurement",
+      "permissions": [
+        "view_suppliers",
+        "edit_suppliers",
+        "view_inventory",
+        "view_orders",
+        "manage_suppliers"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-16T14:20:33Z",
+      "createdAt": "2022-03-01T09:45:00Z",
+      "avatar": "https://example.com/avatars/dchen.jpg",
+      "preferences": {
+        "theme": "light",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": false,
+          "sms": false
+        },
+        "dashboard": {
+          "widgets": [
+            "supplier_performance",
+            "purchase_orders",
+            "low_stock_alerts",
+            "price_trends"
+          ],
+          "layout": "list"
+        }
+      }
+    },
+    {
+      "id": "USR-007",
+      "username": "sthompson",
+      "firstName": "Sarah",
+      "lastName": "Thompson",
+      "email": "sarah.thompson@example.com",
+      "role": "Customer Service Rep",
+      "department": "Customer Support",
+      "permissions": [
+        "view_customers",
+        "edit_customers",
+        "view_orders",
+        "view_shipping",
+        "manage_customers"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-17T13:10:22Z",
+      "createdAt": "2022-03-15T11:30:00Z",
+      "avatar": "https://example.com/avatars/sthompson.jpg",
+      "preferences": {
+        "theme": "light",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": false
+        },
+        "dashboard": {
+          "widgets": [
+            "customer_orders",
+            "support_tickets",
+            "recent_communications",
+            "order_status_summary"
+          ],
+          "layout": "grid"
+        }
+      }
+    },
+    {
+      "id": "USR-008",
+      "username": "jgarcia",
+      "firstName": "Jennifer",
+      "lastName": "Garcia",
+      "email": "jennifer.garcia@example.com",
+      "role": "Financial Analyst",
+      "department": "Finance",
+      "permissions": [
+        "view_orders",
+        "view_suppliers",
+        "view_reports",
+        "view_customers",
+        "manage_reports"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-17T10:45:18Z",
+      "createdAt": "2022-02-10T14:15:00Z",
+      "avatar": "https://example.com/avatars/jgarcia.jpg",
+      "preferences": {
+        "theme": "dark",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": false,
+          "sms": false
+        },
+        "dashboard": {
+          "widgets": [
+            "revenue_summary",
+            "expense_breakdown",
+            "profit_margins",
+            "payment_status"
+          ],
+          "layout": "grid"
+        }
+      }
+    },
+    {
+      "id": "USR-009",
+      "username": "twalker",
+      "firstName": "Thomas",
+      "lastName": "Walker",
+      "email": "thomas.walker@example.com",
+      "role": "Sales Representative",
+      "department": "Sales",
+      "permissions": [
+        "view_customers",
+        "view_orders",
+        "edit_orders",
+        "view_inventory",
+        "manage_sales"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-18T09:05:45Z",
+      "createdAt": "2022-04-05T10:30:00Z",
+      "avatar": "https://example.com/avatars/twalker.jpg",
+      "preferences": {
+        "theme": "light",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": true
+        },
+        "dashboard": {
+          "widgets": [
+            "sales_performance",
+            "customer_orders",
+            "product_performance",
+            "sales_targets"
+          ],
+          "layout": "grid"
+        }
+      }
+    },
+    {
+      "id": "USR-010",
+      "username": "lrodriguez",
+      "firstName": "Lisa",
+      "lastName": "Rodriguez",
+      "email": "lisa.rodriguez@example.com",
+      "role": "Quality Control",
+      "department": "Warehouse",
+      "permissions": [
+        "view_inventory",
+        "view_warehouse",
+        "view_suppliers",
+        "manage_quality"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-17T14:25:30Z",
+      "createdAt": "2022-03-20T09:15:00Z",
+      "avatar": "https://example.com/avatars/lrodriguez.jpg",
+      "preferences": {
+        "theme": "light",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": false
+        },
+        "dashboard": {
+          "widgets": [
+            "quality_metrics",
+            "inspection_schedule",
+            "defect_rates",
+            "supplier_quality"
+          ],
+          "layout": "list"
+        }
+      }
+    },
+    {
+      "id": "USR-011",
+      "username": "mwilliams",
+      "firstName": "Mark",
+      "lastName": "Williams",
+      "email": "mark.williams@example.com",
+      "role": "IT Support",
+      "department": "IT",
+      "permissions": [
+        "view_all",
+        "manage_settings",
+        "manage_users",
+        "view_reports"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-18T08:15:10Z",
+      "createdAt": "2022-01-05T13:45:00Z",
+      "avatar": "https://example.com/avatars/mwilliams.jpg",
+      "preferences": {
+        "theme": "dark",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": true
+        },
+        "dashboard": {
+          "widgets": [
+            "system_status",
+            "user_activity",
+            "error_logs",
+            "performance_metrics"
+          ],
+          "layout": "grid"
+        }
+      }
+    },
+    {
+      "id": "USR-012",
+      "username": "kbrown",
+      "firstName": "Karen",
+      "lastName": "Brown",
+      "email": "karen.brown@example.com",
+      "role": "Receiving Clerk",
+      "department": "Warehouse",
+      "permissions": [
+        "view_inventory",
+        "edit_inventory",
+        "view_suppliers",
+        "view_warehouse"
+      ],
+      "status": "Active",
+      "lastLogin": "2023-11-17T16:10:45Z",
+      "createdAt": "2022-04-15T10:00:00Z",
+      "avatar": "https://example.com/avatars/kbrown.jpg",
+      "preferences": {
+        "theme": "light",
+        "language": "en-US",
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": false
+        },
+        "dashboard": {
+          "widgets": [
+            "receiving_schedule",
+            "pending_receipts",
+            "inventory_discrepancies",
+            "supplier_deliveries"
+          ],
+          "layout": "list"
+        }
+      }
+    }
+  ],
+  "roles": [
+    {
+      "id": "ROLE-001",
+      "name": "Administrator",
+      "description": "Full system access with all permissions",
+      "permissions": [
+        "view_all",
+        "edit_all",
+        "manage_users",
+        "manage_settings",
+        "view_reports",
+        "manage_inventory",
+        "manage_orders",
+        "manage_suppliers",
+        "manage_warehouse",
+        "manage_shipping"
+      ]
+    },
+    {
+      "id": "ROLE-002",
+      "name": "Inventory Manager",
+      "description": "Manages inventory levels and stock control",
+      "permissions": [
+        "view_inventory",
+        "edit_inventory",
+        "view_orders",
+        "view_suppliers",
+        "view_warehouse",
+        "manage_inventory"
+      ]
+    },
+    {
+      "id": "ROLE-003",
+      "name": "Order Processor",
+      "description": "Handles order processing and fulfillment",
+      "permissions": [
+        "view_orders",
+        "edit_orders",
+        "view_customers",
+        "view_inventory",
+        "manage_orders"
+      ]
+    },
+    {
+      "id": "ROLE-004",
+      "name": "Shipping Coordinator",
+      "description": "Manages shipping and delivery processes",
+      "permissions": [
+        "view_orders",
+        "view_shipping",
+        "edit_shipping",
+        "view_customers",
+        "view_warehouse",
+        "manage_shipping"
+      ]
+    },
+    {
+      "id": "ROLE-005",
+      "name": "Warehouse Manager",
+      "description": "Oversees warehouse operations and staff",
+      "permissions": [
+        "view_warehouse",
+        "edit_warehouse",
+        "view_inventory",
+        "edit_inventory",
+        "view_shipping",
+        "view_orders",
+        "manage_warehouse"
+      ]
+    },
+    {
+      "id": "ROLE-006",
+      "name": "Purchasing Agent",
+      "description": "Handles supplier relationships and purchasing",
+      "permissions": [
+        "view_suppliers",
+        "edit_suppliers",
+        "view_inventory",
+        "view_orders",
+        "manage_suppliers"
+      ]
+    },
+    {
+      "id": "ROLE-007",
+      "name": "Customer Service Rep",
+      "description": "Manages customer relationships and inquiries",
+      "permissions": [
+        "view_customers",
+        "edit_customers",
+        "view_orders",
+        "view_shipping",
+        "manage_customers"
+      ]
+    },
+    {
+      "id": "ROLE-008",
+      "name": "Financial Analyst",
+      "description": "Handles financial reporting and analysis",
+      "permissions": [
+        "view_orders",
+        "view_suppliers",
+        "view_reports",
+        "view_customers",
+        "manage_reports"
+      ]
+    }
+  ],
+  "permissions": [
+    "view_all",
+    "edit_all",
+    "manage_users",
+    "manage_settings",
+    "view_reports",
+    "manage_reports",
+    "view_inventory",
+    "edit_inventory",
+    "manage_inventory",
+    "view_orders",
+    "edit_orders",
+    "manage_orders",
+    "view_customers",
+    "edit_customers",
+    "manage_customers",
+    "view_suppliers",
+    "edit_suppliers",
+    "manage_suppliers",
+    "view_warehouse",
+    "edit_warehouse",
+    "manage_warehouse",
+    "view_shipping",
+    "edit_shipping",
+    "manage_shipping",
+    "manage_sales",
+    "manage_quality"
+  ]
+}

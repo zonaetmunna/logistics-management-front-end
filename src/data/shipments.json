@@ -1,0 +1,511 @@
+{
+  "shipments": [
+    {
+      "id": "SHP-2023-1001",
+      "orderId": "ORD-2023-1001",
+      "customer": {
+        "id": "CUST-001",
+        "name": "Acme Corporation",
+        "address": {
+          "street": "123 Business Avenue",
+          "city": "Chicago",
+          "state": "IL",
+          "zip": "60601",
+          "country": "USA"
+        }
+      },
+      "status": "Delivered",
+      "trackingNumber": "EXP1234567890",
+      "carrier": "FedEx",
+      "method": "Express",
+      "cost": 45.99,
+      "createdAt": "2023-11-10T10:30:00Z",
+      "shippedAt": "2023-11-11T09:15:00Z",
+      "estimatedDelivery": "2023-11-15T00:00:00Z",
+      "actualDelivery": "2023-11-14T14:23:00Z",
+      "weight": {
+        "value": 24.5,
+        "unit": "lbs"
+      },
+      "dimensions": {
+        "length": 18,
+        "width": 14,
+        "height": 12,
+        "unit": "inches"
+      },
+      "packages": [
+        {
+          "id": "PKG-10011",
+          "trackingNumber": "EXP1234567890-1",
+          "weight": {
+            "value": 12.2,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 18,
+            "width": 14,
+            "height": 6,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P001",
+              "quantity": 25
+            }
+          ]
+        },
+        {
+          "id": "PKG-10012",
+          "trackingNumber": "EXP1234567890-2",
+          "weight": {
+            "value": 12.3,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 18,
+            "width": 14,
+            "height": 6,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P005",
+              "quantity": 50
+            }
+          ]
+        }
+      ],
+      "notes": "Handle with care",
+      "signature": {
+        "required": true,
+        "name": "John Smith",
+        "timestamp": "2023-11-14T14:23:00Z"
+      },
+      "warehouse": "Main",
+      "insurance": {
+        "insured": true,
+        "value": 3749.25,
+        "provider": "ShipSafe Insurance"
+      }
+    },
+    {
+      "id": "SHP-2023-1003",
+      "orderId": "ORD-2023-1003",
+      "customer": {
+        "id": "CUST-003",
+        "name": "John Doe",
+        "address": {
+          "street": "789 Residential Street",
+          "city": "Boston",
+          "state": "MA",
+          "zip": "02108",
+          "country": "USA"
+        }
+      },
+      "status": "In Transit",
+      "trackingNumber": "STD1122334455",
+      "carrier": "USPS",
+      "method": "Standard",
+      "cost": 8.99,
+      "createdAt": "2023-11-12T11:45:00Z",
+      "shippedAt": "2023-11-13T10:30:00Z",
+      "estimatedDelivery": "2023-11-16T00:00:00Z",
+      "actualDelivery": null,
+      "weight": {
+        "value": 2.3,
+        "unit": "lbs"
+      },
+      "dimensions": {
+        "length": 10,
+        "width": 8,
+        "height": 4,
+        "unit": "inches"
+      },
+      "packages": [
+        {
+          "id": "PKG-10031",
+          "trackingNumber": "STD1122334455",
+          "weight": {
+            "value": 2.3,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 10,
+            "width": 8,
+            "height": 4,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P008",
+              "quantity": 1
+            },
+            {
+              "productId": "P003",
+              "quantity": 2
+            }
+          ]
+        }
+      ],
+      "notes": "Gift wrapped items",
+      "signature": {
+        "required": false,
+        "name": null,
+        "timestamp": null
+      },
+      "warehouse": "Main",
+      "insurance": {
+        "insured": false,
+        "value": 0,
+        "provider": null
+      }
+    },
+    {
+      "id": "SHP-2023-1006",
+      "orderId": "ORD-2023-1006",
+      "customer": {
+        "id": "CUST-006",
+        "name": "City Hospital",
+        "address": {
+          "street": "303 Medical Center Drive",
+          "city": "Philadelphia",
+          "state": "PA",
+          "zip": "19104",
+          "country": "USA"
+        }
+      },
+      "status": "Processing",
+      "trackingNumber": "FRT-789012345",
+      "carrier": "Freight Express",
+      "method": "Freight",
+      "cost": 250.0,
+      "createdAt": "2023-11-14T13:20:00Z",
+      "shippedAt": null,
+      "estimatedDelivery": "2023-11-21T00:00:00Z",
+      "actualDelivery": null,
+      "weight": {
+        "value": 875,
+        "unit": "lbs"
+      },
+      "dimensions": {
+        "length": 96,
+        "width": 48,
+        "height": 48,
+        "unit": "inches"
+      },
+      "packages": [
+        {
+          "id": "PKG-10061",
+          "trackingNumber": "FRT-789012345-1",
+          "weight": {
+            "value": 350,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 48,
+            "width": 48,
+            "height": 24,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P002",
+              "quantity": 15
+            }
+          ]
+        },
+        {
+          "id": "PKG-10062",
+          "trackingNumber": "FRT-789012345-2",
+          "weight": {
+            "value": 350,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 48,
+            "width": 48,
+            "height": 24,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P002",
+              "quantity": 15
+            }
+          ]
+        },
+        {
+          "id": "PKG-10063",
+          "trackingNumber": "FRT-789012345-3",
+          "weight": {
+            "value": 175,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 36,
+            "width": 24,
+            "height": 24,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P005",
+              "quantity": 100
+            },
+            {
+              "productId": "P001",
+              "quantity": 15
+            }
+          ]
+        }
+      ],
+      "notes": "Delivery appointment required",
+      "signature": {
+        "required": true,
+        "name": null,
+        "timestamp": null
+      },
+      "warehouse": "Main",
+      "insurance": {
+        "insured": true,
+        "value": 12198.55,
+        "provider": "FreightGuard Insurance"
+      }
+    },
+    {
+      "id": "SHP-2023-1009",
+      "orderId": "ORD-2023-1009",
+      "customer": {
+        "id": "CUST-009",
+        "name": "Sunset Cafe Chain",
+        "address": {
+          "street": "606 Sunset Boulevard",
+          "city": "Los Angeles",
+          "state": "CA",
+          "zip": "90028",
+          "country": "USA"
+        }
+      },
+      "status": "Ready for Pickup",
+      "trackingNumber": null,
+      "carrier": "FedEx",
+      "method": "Express",
+      "cost": 45.0,
+      "createdAt": "2023-11-17T16:30:00Z",
+      "shippedAt": null,
+      "estimatedDelivery": "2023-11-20T00:00:00Z",
+      "actualDelivery": null,
+      "weight": {
+        "value": 65.5,
+        "unit": "lbs"
+      },
+      "dimensions": {
+        "length": 24,
+        "width": 20,
+        "height": 18,
+        "unit": "inches"
+      },
+      "packages": [
+        {
+          "id": "PKG-10091",
+          "trackingNumber": null,
+          "weight": {
+            "value": 50.5,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 24,
+            "width": 20,
+            "height": 12,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P007",
+              "quantity": 50
+            }
+          ]
+        },
+        {
+          "id": "PKG-10092",
+          "trackingNumber": null,
+          "weight": {
+            "value": 15,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 18,
+            "width": 18,
+            "height": 6,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P009",
+              "quantity": 10
+            }
+          ]
+        }
+      ],
+      "notes": "Monthly recurring shipment",
+      "signature": {
+        "required": true,
+        "name": null,
+        "timestamp": null
+      },
+      "warehouse": "Secondary",
+      "insurance": {
+        "insured": true,
+        "value": 1599.4,
+        "provider": "ShipSafe Insurance"
+      }
+    },
+    {
+      "id": "SHP-2023-1010",
+      "orderId": "ORD-2023-1010",
+      "customer": {
+        "id": "CUST-010",
+        "name": "Global Enterprises",
+        "address": {
+          "street": "707 Corporate Plaza",
+          "city": "New York",
+          "state": "NY",
+          "zip": "10001",
+          "country": "USA"
+        }
+      },
+      "status": "Planning",
+      "trackingNumber": null,
+      "carrier": "Freight Express",
+      "method": "Freight",
+      "cost": 500.0,
+      "createdAt": "2023-11-18T11:30:00Z",
+      "shippedAt": null,
+      "estimatedDelivery": "2023-11-25T00:00:00Z",
+      "actualDelivery": null,
+      "weight": {
+        "value": 2500,
+        "unit": "lbs"
+      },
+      "dimensions": {
+        "length": 120,
+        "width": 96,
+        "height": 84,
+        "unit": "inches"
+      },
+      "packages": [
+        {
+          "id": "PKG-10101",
+          "trackingNumber": null,
+          "weight": {
+            "value": 500,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 48,
+            "width": 48,
+            "height": 24,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P001",
+              "quantity": 100
+            }
+          ]
+        },
+        {
+          "id": "PKG-10102",
+          "trackingNumber": null,
+          "weight": {
+            "value": 1250,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 96,
+            "width": 48,
+            "height": 48,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P002",
+              "quantity": 50
+            }
+          ]
+        },
+        {
+          "id": "PKG-10103",
+          "trackingNumber": null,
+          "weight": {
+            "value": 350,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 48,
+            "width": 36,
+            "height": 24,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P005",
+              "quantity": 200
+            }
+          ]
+        },
+        {
+          "id": "PKG-10104",
+          "trackingNumber": null,
+          "weight": {
+            "value": 400,
+            "unit": "lbs"
+          },
+          "dimensions": {
+            "length": 72,
+            "width": 48,
+            "height": 36,
+            "unit": "inches"
+          },
+          "items": [
+            {
+              "productId": "P010",
+              "quantity": 50
+            }
+          ]
+        }
+      ],
+      "notes": "RUSH ORDER - Corporate headquarters remodel",
+      "signature": {
+        "required": true,
+        "name": null,
+        "timestamp": null
+      },
+      "warehouse": "Main",
+      "insurance": {
+        "insured": true,
+        "value": 44996.0,
+        "provider": "FreightGuard Insurance"
+      }
+    }
+  ],
+  "shipmentStatuses": [
+    "Planning",
+    "Ready for Pickup",
+    "Processing",
+    "In Transit",
+    "Out for Delivery",
+    "Delivered",
+    "Failed Delivery",
+    "Returned"
+  ],
+  "carriers": ["FedEx", "UPS", "USPS", "DHL", "Freight Express"],
+  "shippingMethods": [
+    "Standard",
+    "Express",
+    "Overnight",
+    "Two-Day",
+    "Freight",
+    "International"
+  ]
+}

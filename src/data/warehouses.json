@@ -1,0 +1,370 @@
+{
+  "warehouses": [
+    {
+      "id": "WH-001",
+      "name": "Main Warehouse",
+      "code": "MAIN",
+      "address": {
+        "street": "123 Logistics Way",
+        "city": "Chicago",
+        "state": "IL",
+        "zip": "60642",
+        "country": "USA"
+      },
+      "contact": {
+        "name": "Michael Rodriguez",
+        "position": "Warehouse Manager",
+        "email": "michael.rodriguez@example.com",
+        "phone": "+1-555-123-4567"
+      },
+      "size": {
+        "squareFeet": 125000,
+        "storageCapacity": "High",
+        "loadingDocks": 12
+      },
+      "operatingHours": {
+        "monday": "06:00-22:00",
+        "tuesday": "06:00-22:00",
+        "wednesday": "06:00-22:00",
+        "thursday": "06:00-22:00",
+        "friday": "06:00-22:00",
+        "saturday": "08:00-16:00",
+        "sunday": "Closed"
+      },
+      "features": [
+        "Climate Control",
+        "High-Bay Storage",
+        "Security System",
+        "Hazardous Materials Storage",
+        "Cross-Docking Capability"
+      ],
+      "zones": [
+        {
+          "id": "ZONE-A",
+          "name": "Electronics",
+          "aisles": ["A", "B", "C"],
+          "type": "High-Value"
+        },
+        {
+          "id": "ZONE-B",
+          "name": "Furniture",
+          "aisles": ["D", "E", "F"],
+          "type": "Bulky Items"
+        },
+        {
+          "id": "ZONE-C",
+          "name": "Home Goods",
+          "aisles": ["G", "H"],
+          "type": "Standard"
+        },
+        {
+          "id": "ZONE-D",
+          "name": "Apparel",
+          "aisles": ["I", "J"],
+          "type": "Standard"
+        }
+      ],
+      "inventory": {
+        "totalItems": 12500,
+        "totalValue": 2750000,
+        "utilizationPercentage": 85
+      },
+      "status": "Active",
+      "notes": "Primary distribution center for all product categories"
+    },
+    {
+      "id": "WH-002",
+      "name": "Secondary Warehouse",
+      "code": "SEC",
+      "address": {
+        "street": "456 Storage Boulevard",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30318",
+        "country": "USA"
+      },
+      "contact": {
+        "name": "Sarah Johnson",
+        "position": "Warehouse Manager",
+        "email": "sarah.johnson@example.com",
+        "phone": "+1-555-234-5678"
+      },
+      "size": {
+        "squareFeet": 75000,
+        "storageCapacity": "Medium",
+        "loadingDocks": 8
+      },
+      "operatingHours": {
+        "monday": "08:00-20:00",
+        "tuesday": "08:00-20:00",
+        "wednesday": "08:00-20:00",
+        "thursday": "08:00-20:00",
+        "friday": "08:00-20:00",
+        "saturday": "09:00-14:00",
+        "sunday": "Closed"
+      },
+      "features": [
+        "Climate Control",
+        "Security System",
+        "Automated Sorting System"
+      ],
+      "zones": [
+        {
+          "id": "ZONE-A",
+          "name": "Food & Beverage",
+          "aisles": ["A", "B", "C", "D"],
+          "type": "Temperature Controlled"
+        },
+        {
+          "id": "ZONE-B",
+          "name": "Home Goods",
+          "aisles": ["E", "F"],
+          "type": "Standard"
+        },
+        {
+          "id": "ZONE-C",
+          "name": "Seasonal Items",
+          "aisles": ["G", "H"],
+          "type": "Flexible"
+        }
+      ],
+      "inventory": {
+        "totalItems": 8750,
+        "totalValue": 1250000,
+        "utilizationPercentage": 72
+      },
+      "status": "Active",
+      "notes": "Regional distribution center for southern states"
+    },
+    {
+      "id": "WH-003",
+      "name": "West Coast Facility",
+      "code": "WEST",
+      "address": {
+        "street": "789 Pacific Drive",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90023",
+        "country": "USA"
+      },
+      "contact": {
+        "name": "David Chen",
+        "position": "Warehouse Manager",
+        "email": "david.chen@example.com",
+        "phone": "+1-555-345-6789"
+      },
+      "size": {
+        "squareFeet": 100000,
+        "storageCapacity": "High",
+        "loadingDocks": 10
+      },
+      "operatingHours": {
+        "monday": "07:00-23:00",
+        "tuesday": "07:00-23:00",
+        "wednesday": "07:00-23:00",
+        "thursday": "07:00-23:00",
+        "friday": "07:00-23:00",
+        "saturday": "08:00-18:00",
+        "sunday": "10:00-16:00"
+      },
+      "features": [
+        "Climate Control",
+        "High-Bay Storage",
+        "Security System",
+        "Solar Power",
+        "Automated Picking System"
+      ],
+      "zones": [
+        {
+          "id": "ZONE-A",
+          "name": "Electronics",
+          "aisles": ["A", "B", "C"],
+          "type": "High-Value"
+        },
+        {
+          "id": "ZONE-B",
+          "name": "Furniture",
+          "aisles": ["D", "E"],
+          "type": "Bulky Items"
+        },
+        {
+          "id": "ZONE-C",
+          "name": "Home Goods",
+          "aisles": ["F", "G"],
+          "type": "Standard"
+        },
+        {
+          "id": "ZONE-D",
+          "name": "Import Processing",
+          "aisles": ["H", "I", "J"],
+          "type": "Customs Clearance"
+        }
+      ],
+      "inventory": {
+        "totalItems": 10250,
+        "totalValue": 2250000,
+        "utilizationPercentage": 78
+      },
+      "status": "Active",
+      "notes": "Primary import facility for Asian products"
+    },
+    {
+      "id": "WH-004",
+      "name": "Northeast Hub",
+      "code": "NEAST",
+      "address": {
+        "street": "101 Harbor Street",
+        "city": "Boston",
+        "state": "MA",
+        "zip": "02210",
+        "country": "USA"
+      },
+      "contact": {
+        "name": "Emily Wilson",
+        "position": "Warehouse Manager",
+        "email": "emily.wilson@example.com",
+        "phone": "+1-555-456-7890"
+      },
+      "size": {
+        "squareFeet": 85000,
+        "storageCapacity": "Medium",
+        "loadingDocks": 9
+      },
+      "operatingHours": {
+        "monday": "07:00-21:00",
+        "tuesday": "07:00-21:00",
+        "wednesday": "07:00-21:00",
+        "thursday": "07:00-21:00",
+        "friday": "07:00-21:00",
+        "saturday": "08:00-16:00",
+        "sunday": "Closed"
+      },
+      "features": [
+        "Climate Control",
+        "Security System",
+        "Automated Inventory Management",
+        "Cold Storage"
+      ],
+      "zones": [
+        {
+          "id": "ZONE-A",
+          "name": "Electronics",
+          "aisles": ["A", "B"],
+          "type": "High-Value"
+        },
+        {
+          "id": "ZONE-B",
+          "name": "Apparel",
+          "aisles": ["C", "D", "E"],
+          "type": "Standard"
+        },
+        {
+          "id": "ZONE-C",
+          "name": "Food & Beverage",
+          "aisles": ["F", "G"],
+          "type": "Temperature Controlled"
+        }
+      ],
+      "inventory": {
+        "totalItems": 7500,
+        "totalValue": 1750000,
+        "utilizationPercentage": 80
+      },
+      "status": "Active",
+      "notes": "Services northeastern states and Canadian exports"
+    },
+    {
+      "id": "WH-005",
+      "name": "Central Distribution",
+      "code": "CENT",
+      "address": {
+        "street": "202 Midwest Lane",
+        "city": "Kansas City",
+        "state": "MO",
+        "zip": "64108",
+        "country": "USA"
+      },
+      "contact": {
+        "name": "Robert Taylor",
+        "position": "Warehouse Manager",
+        "email": "robert.taylor@example.com",
+        "phone": "+1-555-567-8901"
+      },
+      "size": {
+        "squareFeet": 110000,
+        "storageCapacity": "High",
+        "loadingDocks": 11
+      },
+      "operatingHours": {
+        "monday": "06:00-22:00",
+        "tuesday": "06:00-22:00",
+        "wednesday": "06:00-22:00",
+        "thursday": "06:00-22:00",
+        "friday": "06:00-22:00",
+        "saturday": "07:00-17:00",
+        "sunday": "Closed"
+      },
+      "features": [
+        "Climate Control",
+        "High-Bay Storage",
+        "Security System",
+        "Rail Access",
+        "Cross-Docking Capability"
+      ],
+      "zones": [
+        {
+          "id": "ZONE-A",
+          "name": "Electronics",
+          "aisles": ["A", "B"],
+          "type": "High-Value"
+        },
+        {
+          "id": "ZONE-B",
+          "name": "Furniture",
+          "aisles": ["C", "D", "E"],
+          "type": "Bulky Items"
+        },
+        {
+          "id": "ZONE-C",
+          "name": "Home Goods",
+          "aisles": ["F", "G", "H"],
+          "type": "Standard"
+        },
+        {
+          "id": "ZONE-D",
+          "name": "Apparel",
+          "aisles": ["I", "J"],
+          "type": "Standard"
+        },
+        {
+          "id": "ZONE-E",
+          "name": "Food & Beverage",
+          "aisles": ["K", "L"],
+          "type": "Temperature Controlled"
+        }
+      ],
+      "inventory": {
+        "totalItems": 11750,
+        "totalValue": 2500000,
+        "utilizationPercentage": 82
+      },
+      "status": "Active",
+      "notes": "Strategic central location for nationwide distribution"
+    }
+  ],
+  "warehouseStatuses": [
+    "Active",
+    "Under Maintenance",
+    "Closed",
+    "Under Construction"
+  ],
+  "zoneTypes": [
+    "Standard",
+    "High-Value",
+    "Temperature Controlled",
+    "Hazardous Materials",
+    "Bulky Items",
+    "Customs Clearance",
+    "Flexible"
+  ]
+}

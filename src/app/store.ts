@@ -6,7 +6,7 @@ import counterReducer from "../features/counter/counterSlice"
 export const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
-    auth:authSlice
+    auth:authSlice,
     counter: counterReducer,
   },
   middleware: (getDefaultMiddleware) =>
